@@ -25,7 +25,6 @@ export interface Entry extends BaseEntry {
   colorAlt: string;
   constipated: boolean;
   description: string;
-  id: string | number;
   image: string;
   pain: boolean;
   painScale: number;

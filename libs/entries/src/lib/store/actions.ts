@@ -1,1 +1,3 @@
-export enum EntryActions {}
+export enum EntryActions {
+  Select = 'SELECT_ENTRY'
+}

@@ -1,5 +1,6 @@
 export interface BaseEntry {
-  takenAt: string;
   createdAt: string;
+  id: string | number;
+  takenAt: string;
   updatedAt: string;
 }
