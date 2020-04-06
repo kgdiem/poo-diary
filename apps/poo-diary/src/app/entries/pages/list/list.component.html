@@ -1,1 +1,9 @@
-<p>list works!</p>
+<h1>Poos</h1>
+<button matButton type="button" role="link" [routerLink]="['add']">
+  <mat-icon>add</mat-icon>
+</button>
+<ul>
+  <li *ngFor="let entry of entries$ | async">
+    {{ entry.summary }}
+  </li>
+</ul>

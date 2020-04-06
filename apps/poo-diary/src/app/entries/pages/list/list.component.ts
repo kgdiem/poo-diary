@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EntriesFacade } from '@poodiary/entries';
 
 @Component({
   selector: 'poodiary-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  entries$ = this.entries.entries$;
 
-  constructor() { }
+  constructor(private entries: EntriesFacade) {}
 
   ngOnInit(): void {
+    this.entries.query();
   }
-
 }

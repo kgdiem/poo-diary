@@ -2,6 +2,7 @@ import { BaseEntry } from './base-entry';
 
 export enum PooColor {
   Black = 'Black',
+  Brown = 'Brown',
   White = 'White',
   Green = 'Green',
   Red = 'Red',
@@ -22,12 +23,12 @@ export enum PooType {
 export interface Entry extends BaseEntry {
   blood: boolean;
   color: PooColor;
-  colorAlt: string;
+  colorAlt?: string;
   constipated: boolean;
   description: string;
-  image: string;
+  image?: string;
   pain: boolean;
   painScale: number;
-  timeTaken: string;
+  timeTaken: number;
   type: PooType;
 }
