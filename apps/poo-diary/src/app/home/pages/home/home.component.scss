@@ -1,0 +1,32 @@
+h1,
+.quote-container,
+.img-container,
+.btn-container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.quote-container {
+  font-size: 1.5em;
+
+  .quote-inner {
+    display: inline-block;
+    max-width: 100%;
+    text-align: left;
+    width: 450px;
+  }
+
+  .attribution {
+    text-align: right;
+  }
+}
+
+img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  width: 450px;
+}

@@ -25,7 +25,12 @@
               "apps/poo-diary/src/favicon.ico",
               "apps/poo-diary/src/assets"
             ],
-            "styles": ["apps/poo-diary/src/styles.scss"],
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "apps/poo-diary/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
