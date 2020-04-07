@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultPageComponent } from './ components/default-page/default-page.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [DefaultPageComponent],
@@ -12,7 +13,8 @@ import { DefaultPageComponent } from './ components/default-page/default-page.co
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgxMaterialTimepickerModule.setLocale('en-US')
   ],
   bootstrap: [DefaultPageComponent]
 })

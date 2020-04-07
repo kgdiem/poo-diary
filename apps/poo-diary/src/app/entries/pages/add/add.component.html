@@ -1,2 +1,96 @@
-<h1>Add a Poo</h1>
-<div [formGroup]="form"></div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Add a Poo
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div [formGroup]="form" (ngSubmit)="submit()">
+      <div>
+        <mat-form-field>
+          <mat-label>Date Taken</mat-label>
+          <input
+            matInput
+            formControlName="dateTaken"
+            [matDatepicker]="datePicker"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datePicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Time Taken</mat-label>
+          <input
+            matInput
+            formControlName="timeTaken"
+            [ngxTimepicker]="picker"
+          />
+          <ngx-material-timepicker #picker></ngx-material-timepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Color</mat-label>
+          <mat-select formControlName="color">
+            <mat-option *ngFor="let color of colors" [value]="color">{{
+              color
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Alternative/Additional Color</mat-label>
+          <input matInput formControlName="colorAlt" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Texture</mat-label>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let type of types" [value]="type">{{
+              type
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-checkbox formControlName="constipated">
+          Did you feel constipated or have trouble doing a BM?
+        </mat-checkbox>
+      </div>
+
+      <div>
+        <mat-checkbox formControlName="pain">Was your BM painful?</mat-checkbox>
+      </div>
+
+      <div>
+        <mat-checkbox formControlName="blood">
+          Was there any blood in your BM?
+        </mat-checkbox>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Comments/Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-button type="submit" (click)="submit()">
+          Save
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

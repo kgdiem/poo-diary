@@ -13,6 +13,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 const MAT_MODULES = [
   MatButtonModule,
@@ -23,7 +26,10 @@ const MAT_MODULES = [
   MatRadioModule,
   MatSelectModule,
   MatIconModule,
-  NgxMaterialTimepickerModule
+  NgxMaterialTimepickerModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatMomentDateModule
 ];
 
 @NgModule({

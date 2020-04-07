@@ -13,12 +13,32 @@ export enum PooColor {
 export enum PooType {
   Lumps = 'Seperate lumps',
   Lumpy = 'Sausage like lump',
-  Cracked = 'Cracked sausage',
-  Smooth = 'Smooth sausage / snake',
+  Cracked = 'Cracked, solid sausage',
+  Smooth = 'Smooth, solid sausage / snake',
   Blobs = 'Seperate, soft blobs',
   Mush = 'Mushy mess',
   Liquid = 'Liquid diarrhea'
 }
+
+export const PooColors = [
+  PooColor.Black,
+  PooColor.Brown,
+  PooColor.White,
+  PooColor.Green,
+  PooColor.Red,
+  PooColor.Orange,
+  PooColor.Yellow
+];
+
+export const PooTypes = [
+  PooType.Lumps,
+  PooType.Lumpy,
+  PooType.Cracked,
+  PooType.Smooth,
+  PooType.Blobs,
+  PooType.Mush,
+  PooType.Liquid
+];
 
 export interface Entry extends BaseEntry {
   blood: boolean;
