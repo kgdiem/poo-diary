@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { EntrySearch, Entry } from '@poodiary/api-interfaces';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
+
+const dateFormat = 'YYYY-MM-DD';
+const timeFormat = 'h:mm a';
 
 @Injectable({ providedIn: 'root' })
 export class EntriesService {
@@ -51,7 +55,22 @@ export class EntriesService {
 
       this.idSequence++;
 
-      this.entries.push(entry);
+      const e = { ...entry };
+
+      // @ts-ignore
+      const { dateTaken, timeTaken } = e;
+
+      const dateString = dateTaken.format(dateFormat);
+
+      e.takenAt = moment(`${dateString} ${timeTaken}`).format(
+        `${dateFormat} ${timeFormat}`
+      );
+
+      //@ts-ignore
+      delete e.dateTaken;
+      delete e.timeTaken;
+
+      this.entries.push(e);
 
       localStorage.setItem('entries', JSON.stringify(this.entries));
       localStorage.setItem('idSequence', this.idSequence.toFixed());
